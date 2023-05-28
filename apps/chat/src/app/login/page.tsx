@@ -73,7 +73,7 @@ export default function Login() {
     <>
       <div className={styles["login-form-container"]}>
         <form className={styles["login-form"]} onSubmit={handleLogin}>
-          <ReturnButton onClick={() => router.push("/enter")} />
+          {/* <ReturnButton onClick={() => router.push("/enter")} /> */}
 
           <h2 className={styles["login-form-title"]}>Login</h2>
           <div className={styles["login-form-input-group"]}>

@@ -76,11 +76,10 @@ export function Sidebar({ children }: { children: React.ReactNode }) {
 
   return (
     <div
-      className={`${
-        config.tightBorder && !isMobileScreen()
-          ? styles["tight-container"]
-          : styles.container
-      }`}
+      className={`${config.tightBorder && !isMobileScreen()
+        ? styles["tight-container"]
+        : styles.container
+        }`}
     >
       <div
         className={styles.sidebar + ` ${showSideBar && styles["sidebar-show"]}`}
@@ -99,22 +98,22 @@ export function Sidebar({ children }: { children: React.ReactNode }) {
         </div>
 
         <div className={styles["sidebar-header-bar"]}>
-          <IconButton
-            icon={<UserIcon />}
-            text="个人中心"
-            className={styles["sidebar-bar-button"]}
-            onClick={() => {
-              router.push("/profile");
-            }}
-          />
-          <IconButton
-            icon={<ShoppingIcon />}
-            text="充值中心"
-            className={styles["sidebar-bar-button"]}
-            onClick={() => {
-              router.push("/pricing");
-            }}
-          />
+          {/* <IconButton */}
+          {/*   icon={<UserIcon />} */}
+          {/*   text="个人中心" */}
+          {/*   className={styles["sidebar-bar-button"]} */}
+          {/*   onClick={() => { */}
+          {/*     router.push("/profile"); */}
+          {/*   }} */}
+          {/* /> */}
+          {/* <IconButton */}
+          {/*   icon={<ShoppingIcon />} */}
+          {/*   text="充值中心" */}
+          {/*   className={styles["sidebar-bar-button"]} */}
+          {/*   onClick={() => { */}
+          {/*     router.push("/pricing"); */}
+          {/*   }} */}
+          {/* /> */}
         </div>
 
         <div
@@ -157,22 +156,22 @@ export function Sidebar({ children }: { children: React.ReactNode }) {
                 }}
               />
             </div>
-            <div className={styles["sidebar-action"]}>
-              <IconButton
-                icon={<SettingsIcon />}
-                onClick={() => {
-                  router.push("/settings");
-                  setShowSideBar(false);
-                }}
-              />
-            </div>
+            {/* <div className={styles["sidebar-action"]}> */}
+            {/*   <IconButton */}
+            {/*     icon={<SettingsIcon />} */}
+            {/*     onClick={() => { */}
+            {/*       router.push("/settings"); */}
+            {/*       setShowSideBar(false); */}
+            {/*     }} */}
+            {/*   /> */}
+            {/* </div> */}
             {/*TODO add about us*/}
-            <div className={styles["sidebar-action"]}>
-              <IconButton
-                icon={<AnnouncementIcon />}
-                onClick={() => showAnnouncement(notice)}
-              />
-            </div>
+            {/* <div className={styles["sidebar-action"]}> */}
+            {/*   <IconButton */}
+            {/*     icon={<AnnouncementIcon />} */}
+            {/*     onClick={() => showAnnouncement(notice)} */}
+            {/*   /> */}
+            {/* </div> */}
           </div>
           <div>
             <IconButton
