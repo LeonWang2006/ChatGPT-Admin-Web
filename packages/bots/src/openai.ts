@@ -3,8 +3,8 @@ import { AnswerParams, GPTModel } from './types';
 import { streamToLineIterator } from './utils';
 import * as process from 'process';
 
-const API_END_POINT = process.env.OPENAI_ENDPOINT ?? 'https://api.openai.com';
-const COMPLETIONS_URL = `${API_END_POINT}/v1/chat/completions`;
+// const API_END_POINT = process.env.OPENAI_ENDPOINT ?? 'https://api.openai.com';
+const COMPLETIONS_URL = "https://chatgpt-test01.openai.azure.com/openai/deployments/ChatBot/chat/completions?api-version=2023-03-15-preview";
 
 export class OpenAIBot extends AbstractBot {
   constructor(
@@ -21,7 +21,8 @@ export class OpenAIBot extends AbstractBot {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        Authorization: `Bearer ${this.apiKey}`,
+        Authorization: `Bearer ${this.apiKey} `,
+        "api-key": `${this.apiKey} `,
       },
       body: JSON.stringify({
         model: this.model,
@@ -33,7 +34,7 @@ export class OpenAIBot extends AbstractBot {
     });
 
     if (!response.ok) {
-      throw new Error(`OpenAI API error: ${response.statusText}`);
+      throw new Error(`OpenAI API error: ${response.statusText} `);
     }
 
     const lines = streamToLineIterator(response.body!);
